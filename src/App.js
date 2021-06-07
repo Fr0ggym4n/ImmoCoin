@@ -1,16 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import { BASEURL } from './api/handleApi';
 
 const App = () => {
 
-  // eslint-disable-next-line no-template-curly-in-string
-  const URL = '${BASEURL}/properties';
+  const URL = 'https://immocoin-backend.herokuapp.com/api/properties';
 
 
-  fetch(URL)
-  .then(response => response.json())
-  .then(data => console.log(data));
+  fetch(URL, {
+    headers : {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+
+  })
+  .then((response) => response.json())
+  .then((data) => {console.log(data);
+  });
 
   return (
     <div className="App">
