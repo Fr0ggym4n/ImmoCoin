@@ -3,7 +3,7 @@ import './App.css';
 
 const App = () => {
 
-  const URL = 'https://apiimmoncoin.herokuapp.com/api/properties';
+  const URL = 'https://immocoin-backend.herokuapp.com/api/properties';
 
   fetch(URL)
   .then(response => response.json())
