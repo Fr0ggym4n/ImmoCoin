@@ -5,6 +5,7 @@ const App = () => {
 
   const URL = 'https://immocoin-backend.herokuapp.com/api/properties';
 
+
   fetch(URL)
   .then(response => response.json())
   .then(data => console.log(data));
