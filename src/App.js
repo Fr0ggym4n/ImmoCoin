@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import { BASEURL } from './api/handleApi';
 
 const App = () => {
 
-  const URL = 'https://immocoin-backend.herokuapp.com/api/properties';
+  const URL = BASEURL + '/properties';
 
 
   fetch(URL)
