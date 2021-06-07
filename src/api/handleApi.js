@@ -1,4 +1,4 @@
-const BASE_URL = 'https://apiimmoncoin.herokuapp.com/api'
+const BASE_URL = 'https://immocoin-backend.herokuapp.com/api'
 
 
 export {
