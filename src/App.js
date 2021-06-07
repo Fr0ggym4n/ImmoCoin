@@ -4,7 +4,8 @@ import { BASEURL } from './api/handleApi';
 
 const App = () => {
 
-  const URL = BASEURL + '/properties';
+  // eslint-disable-next-line no-template-curly-in-string
+  const URL = '${BASEURL}/properties';
 
 
   fetch(URL)
