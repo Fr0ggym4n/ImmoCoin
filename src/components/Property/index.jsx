@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Property({ property }) {
+const Property = ({ property }) => {
     console.log(property.name);
     return (
         <div>
