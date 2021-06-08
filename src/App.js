@@ -5,9 +5,17 @@ const App = () => {
 
   const URL = 'https://immocoin-backend.herokuapp.com/api/properties';
 
-  fetch(URL)
-  .then(response => response.json())
-  .then(data => console.log(data));
+
+  fetch(URL, {
+    headers : {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+
+  })
+  .then((response) => response.json())
+  .then((data) => {console.log(data);
+  });
 
   return (
     <div className="App">
