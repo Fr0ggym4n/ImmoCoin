@@ -37,7 +37,7 @@ const Home= ({properties})=> {
         <Grid item md={5}  key={item.id} >
           <Paper className={classes.paper}>
             <Link
-             to={"/" + item.id}
+             to={"/properties/" + item.id}
              key={item.id}>
             <Card >
               <CardActionArea>

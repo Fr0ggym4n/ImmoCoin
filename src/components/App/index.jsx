@@ -32,7 +32,7 @@ const App = () => {
             <Route path="/" exact>
               <Home properties={properties}/>
             </Route>
-            <Route path="/:idProperty" exact >
+            <Route path="/properties/:idProperty"  >
                 <Property properties={properties}/>
             </Route>
           </Switch>
