@@ -13,7 +13,6 @@ const Navbar = () => {
     e.preventDefault();
     dispatch(logout());
     history.push("/");
-    window.alert("Disconnecting...see you soon!");
   };
   return (
     <div class="topnav">
