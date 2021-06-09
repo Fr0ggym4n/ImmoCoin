@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import Home from 'pages/Home';
+import Navbar from 'components/Navbar';
+import SignIn from 'pages/SignIn'
+import SignUp from 'pages/SignUp'
 import store from 'store'
 import {
   BrowserRouter as Router,
@@ -28,11 +31,18 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <div>
+        <Navbar />
           <Switch>
             <Route path="/" exact>
               <Home properties={properties}/>
             </Route>
-            <Route path="/properties/:idProperty"  >
+            <Route path="/register">
+                                <SignUp />
+                            </Route>
+            <Route path="/login">
+                                <SignIn />
+                            </Route>
+            <Route path="/:idProperty" exact >
                 <Property properties={properties}/>
             </Route>
           </Switch>
