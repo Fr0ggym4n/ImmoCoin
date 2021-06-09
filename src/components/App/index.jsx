@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 import Home from 'pages/Home';
 import Navbar from 'components/Navbar';
@@ -10,11 +10,22 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import Property from 'components/Property';
 
 
 
 const App = () => {
 
+
+  const [properties, setProperties] = useState([]);
+
+  const URL = "https://immocoin-backend.herokuapp.com/api/properties";
+
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) => setProperties(data));
+  }, [])
 
   return (
     <Provider store={store}>
@@ -22,15 +33,18 @@ const App = () => {
         <div>
         <Navbar />
           <Switch>
-          <Route path="/" exact>
-                                <Home />
-                            </Route>
-                            <Route path="/register">
+            <Route path="/" exact>
+              <Home properties={properties}/>
+            </Route>
+            <Route path="/register">
                                 <SignUp />
                             </Route>
-                            <Route path="/login">
+            <Route path="/login">
                                 <SignIn />
                             </Route>
+            <Route path="/:idProperty" exact >
+                <Property properties={properties}/>
+            </Route>
           </Switch>
         </div>
       </Router>
