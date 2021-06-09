@@ -42,7 +42,7 @@ const App = () => {
             <Route path="/login">
                                 <SignIn />
                             </Route>
-            <Route path="/:idProperty" exact >
+            <Route path="/properties/:idProperty" exact >
                 <Property properties={properties}/>
             </Route>
           </Switch>
