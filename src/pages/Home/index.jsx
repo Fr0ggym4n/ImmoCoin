@@ -75,4 +75,6 @@ const Home= ({properties})=> {
   );
 }
 
+
 export default Home;
+
