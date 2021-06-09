@@ -58,17 +58,17 @@ const SignUp = () => {
     }
 
     return (
-        <div class="container">
-            <div className="text-center my-2">
+        <div>
+            <div>
                 <h3>Sign Up</h3>
             </div>
             <form>
-                <div className="form-group">
-                    <label className="mb-1" type="text" name="email">Email</label>
-                    <input className="form-control mb-2" type="text" name="email" onChange={handleEmail} />
-                    <label className="mb-1" type="text" name="password">Password</label>
-                    <input className="form-control mb-3" rows='4' type="password" name="password" onChange={handlePassword} />
-                    <button className="btn btn-outline-secondary" type="submit" onClick={fetchSignUp}>Sign up</button>
+                <div>
+                    <label type="text" name="email">Email</label>
+                    <input type="text" name="email" onChange={handleEmail} />
+                    <label type="text" name="password">Password</label>
+                    <input rows='4' type="password" name="password" onChange={handlePassword} />
+                    <button type="submit" onClick={fetchSignUp}>Sign up</button>
                 </div>
                 <div> {alert ? <Alert severity="error">This is an error alert — check your info</Alert> : <></> } 
                 </div>
