@@ -23,6 +23,16 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
     color: theme.palette.text.secondary,
   },
+  centerItem:{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    
+    
+  },
+  link: {
+    textDecoration:"none"
+  }
 }));
 
 const Home= ({properties})=> {
@@ -32,11 +42,12 @@ const Home= ({properties})=> {
   const classes = useStyles();
 
   return (
-    <Container maxWidth='xl'>
+    <Container maxWidth='xl' className={classes.centerItem}>
       {properties.map((item) => (
-        <Grid item md={5}  key={item.id} >
+        <Grid item md={8}  key={item.id} >
           <Paper className={classes.paper}>
             <Link
+              className={classes.link}
              to={"/properties/" + item.id}
              key={item.id}>
             <Card >
@@ -44,7 +55,7 @@ const Home= ({properties})=> {
                 <CardMedia
                   component="img"
                   alt="interior house"
-                  height="140"
+                  height="250"
                   image="https://images.unsplash.com/photo-1616137466211-f939a420be84?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
                   title="house"
                 />
@@ -52,23 +63,13 @@ const Home= ({properties})=> {
                   <Typography gutterBottom variant="h5" component="h2">
                     {item.name}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {item.description}
-                  </Typography>
+                 
                 </CardContent>
               </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Learn More
-                </Button>
-              </CardActions>
+            
             </Card>
             </Link>
-          </Paper>
+         </Paper>
         </Grid>
       ))}
     </Container>
