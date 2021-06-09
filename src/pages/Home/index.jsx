@@ -26,7 +26,7 @@ function Home() {
    
 
     return (
-        <div>
+        <div className="col-md-8">
            
            
                 {properties.map((item) => (
@@ -35,23 +35,24 @@ function Home() {
                     <CardActionArea>
                       <CardMedia
                         component="img"
-                        alt="interior house"
-                        height="140"
+                        alt="interior house"  
+                        paddingTop = '56.25%'
+                        marginTop = '30'          
                         image="https://images.unsplash.com/photo-1616137466211-f939a420be84?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
                         title="house"
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h5" component="h2" align="center">
                           {item.name}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="body2" color="textSecondary" component="p" align="center">
                          {item.description}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
                      
-                      <Button size="small" color="primary">
+                      <Button size="small" color="primary" align="center" >
                         Learn More
                       </Button>
                     </CardActions>
