@@ -119,12 +119,14 @@ const Property = ({ properties }) => {
         <h3>Edit property</h3>
       </div>
       <form>
-        <div className="form-group">
-          <label type="text" name="username">name</label>
+      <div className="form-group">
+          <label type="text" name="username">Name</label>
           <input type="text" name="name" onChange={(e) => setName(e.target.value)}></input>
-          <label type="text" name="description">Description</label>
-          <textarea rows='4' type="text" name="description" onChange={(e) => setDescription(e.target.value)}></textarea>
-          <label type="text" name="username">price</label>
+          <label type="text" name="description">Description</label>          <br></br>
+
+          <textarea cols="47" rows="10" type="text" name="description" onChange={(e) => setDescription(e.target.value)}></textarea>
+          <br></br>
+          <label type="text" name="username">Price</label>
           <input type="text" name="username" onChange={(e) => setPrice(e.target.value)}></input>
           <button type="submit" onClick={fetchEditProperty}>Update</button>
         </div>
