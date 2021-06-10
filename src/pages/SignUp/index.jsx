@@ -3,6 +3,26 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { authenticate } from 'store/actions'
 import Alert from '@material-ui/lab/Alert';
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    formContainer: {
+        padding: "10%",
+    },
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        
+    }
+  }));
+
+
+
 
 const SignUp = () => {
 
@@ -56,13 +76,13 @@ const SignUp = () => {
 
         history.push('/')
     }
-
+    const classes = useStyles();
     return (
-        <div>
+        <Container maxWidth="md" className={classes.container} >
             <div>
                 <h3>Sign Up</h3>
             </div>
-            <form>
+            <form className={classes.formContainer}>
                 <div>
                     <label type="text" name="email">Email</label>
                     <input type="text" name="email" onChange={handleEmail} />
@@ -73,7 +93,7 @@ const SignUp = () => {
                 <div> {alert ? <Alert severity="error">This is an error alert — check your info</Alert> : <></> } 
                 </div>
             </form>
-        </div>
+            </Container>
     )
 }
 

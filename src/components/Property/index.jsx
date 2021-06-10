@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   container: {
     marginTop: "2rem",
@@ -17,7 +18,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
+    
   },
+  cardContainer: {
+    textalign: "center",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection:"column"
+  }
 }));
 
 const Property = ({ properties }) => {
@@ -41,9 +50,9 @@ const Property = ({ properties }) => {
     <div>
       <Container maxWidth="sm" className={classes.container}>
         {currentProperty && (
-          <div>
+          <div className={classes.cardContainer}>
             <img
-              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+              src="https://source.unsplash.com/1600x900/?house"
               alt="picture house"
               width="100%"
             />
