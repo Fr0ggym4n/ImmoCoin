@@ -49,17 +49,23 @@ const Home = ({ properties }) => {
       <Typography color="textSecondary"
         variant="h2"
         align="center"
-      >Où voulez-vous vivre ?</Typography>
+      >
+        <h3>ImmoCoin</h3>
+
+        Where do you want to live ?
+        
+        </Typography>
       <br />
       <Container maxWidth='xl' className={classes.textHome}>
         <Typography variant="h6"
           align="center"
           color="initial">
-          Il y a forcément LE bien qui correspond à votre projet dans nos annonces immobilières.<br />
-      Que vous souhaitez acheter ou vendre votre bien immobilier : vous êtes au bon endroit !<br /><br />
-      L'immobilier, ce n'est pas uniquement des surfaces en m2 et des prix net vendeur,<br />
-      c'est surtout vous : des gens uniques et des projets de vie qui le sont aussi.<br />
-      Bref, autant de nouveaux défis à relever ensemble, une bonne dose de créativité et une aventure humaine passionnante !
+The place you are looking for is certainly here - on our real estate website.<br />
+Whether you want to buy or sell your property: you have come to the right place!<br /><br />
+
+Real estate is not just about surface area and their selling prices,<br />
+it should be all about you: your life projects and finding a place to call home :slight_smile:<br />
+Here we are all about helping you face new challenges  together, with a good dose of creativity and an exciting human adventure!<br />
     </Typography>
 
       </Container>
