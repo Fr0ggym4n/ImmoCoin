@@ -14,6 +14,8 @@ import Container from '@material-ui/core/Container';
 import { Link } from "react-router-dom";
 
 
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -29,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
 
-
   },
+
   link: {
     textDecoration: "none"
   }
@@ -43,6 +45,24 @@ const Home = ({ properties }) => {
   const classes = useStyles();
 
   return (
+    <>
+      <Typography color="textSecondary"
+      variant="h2"
+      align="center"
+      >Où voulez-vous vivre ?</Typography>
+      <br/>
+      <Container maxWidth='xl' className={classes.textHome}>
+      <Typography variant="h6"
+      align="center"
+      color="pink">
+      Il y a forcément LE bien qui correspond à votre projet dans nos annonces immobilières.<br/>
+      Que vous souhaitez acheter ou vendre votre bien immobilier : vous êtes au bon endroit !<br/><br/>
+      L'immobilier, ce n'est pas uniquement des surfaces en m2 et des prix net vendeur,<br/>
+      c'est surtout vous : des gens uniques et des projets de vie qui le sont aussi.<br/>
+      Bref, autant de nouveaux défis à relever ensemble, une bonne dose de créativité et une aventure humaine passionnante !
+    </Typography>
+      
+      </Container>
     <Container maxWidth='xl' className={classes.centerItem}>
       {properties.map((item) => (
         <Grid item md={8} key={item.id} >
@@ -73,6 +93,8 @@ const Home = ({ properties }) => {
         </Grid>
       ))}
     </Container>
+    
+  </>
   );
 }
 
