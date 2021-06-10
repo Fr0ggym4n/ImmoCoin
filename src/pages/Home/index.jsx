@@ -54,7 +54,7 @@ const Home = ({ properties }) => {
       <Container maxWidth='xl' className={classes.textHome}>
       <Typography variant="h6"
       align="center"
-      color="pink">
+      color="initial">
       Il y a forcément LE bien qui correspond à votre projet dans nos annonces immobilières.<br/>
       Que vous souhaitez acheter ou vendre votre bien immobilier : vous êtes au bon endroit !<br/><br/>
       L'immobilier, ce n'est pas uniquement des surfaces en m2 et des prix net vendeur,<br/>
