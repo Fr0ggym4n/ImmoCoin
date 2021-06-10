@@ -70,7 +70,7 @@ const MyProfile = ({ properties }) => {
     return (
         <div>
             <div>
-                <h5>{currentUser.email}</h5>
+                <h2>{currentUser.email}</h2>
             </div>
 
             <div>
@@ -90,9 +90,12 @@ const MyProfile = ({ properties }) => {
             <div>My Properties
                     {propertiesUser && propertiesUser.map((property) => (
                 <div >
-                    <div>{property.name}</div>
-                    <div>{property.description}</div>
-                    <div>{property.price}</div>
+                   
+                        <div>{property.name}</div>
+                        <div>{property.description}</div>
+                        <div>{property.price}</div>
+                  
+                   
                 </div>
             ))}
             </div>
