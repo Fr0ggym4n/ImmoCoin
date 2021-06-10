@@ -55,7 +55,7 @@ const App = () => {
             </Route>
             <PrivateRoute path="/profile" component={MyProfile} />
             <PrivateRoute path="/properties" component={AddProperty} />
-            <PrivateRoute path="/properties/myProperties" component={MyProperties} />
+            <PrivateRoute path="/myProperties" component={MyProperties} />
           </Switch>
         </div>
       </Router>

@@ -24,6 +24,7 @@ const MyProperties = () => {
         const properties = await resp.filter((property) => property.user_id == currentUser.id)
         setPropertiesUser(properties)
     }
+        console.log('myProporties',propertiesUser)
 
     useEffect(() => {
         fetchPropertiesCurrentUser()
