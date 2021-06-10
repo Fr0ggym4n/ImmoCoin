@@ -149,6 +149,7 @@ const Property = ({ properties }) => {
           <input type="number" name="username"  className={classes.inputNumber} onChange={(e) => setPrice(e.target.value)}></input>
         </div>
         <div className={classes.formGroup}>
+
           <button type="submit" onClick={fetchEditProperty}>Update</button>
         </div>
       </form>
