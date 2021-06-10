@@ -47,54 +47,56 @@ const Home = ({ properties }) => {
   return (
     <>
       <Typography color="textSecondary"
-      variant="h2"
-      align="center"
+        variant="h2"
+        align="center"
       >Où voulez-vous vivre ?</Typography>
-      <br/>
+      <br />
       <Container maxWidth='xl' className={classes.textHome}>
-      <Typography variant="h6"
-      align="center"
-      color="initial">
-      Il y a forcément LE bien qui correspond à votre projet dans nos annonces immobilières.<br/>
-      Que vous souhaitez acheter ou vendre votre bien immobilier : vous êtes au bon endroit !<br/><br/>
-      L'immobilier, ce n'est pas uniquement des surfaces en m2 et des prix net vendeur,<br/>
-      c'est surtout vous : des gens uniques et des projets de vie qui le sont aussi.<br/>
+        <Typography variant="h6"
+          align="center"
+          color="initial">
+          Il y a forcément LE bien qui correspond à votre projet dans nos annonces immobilières.<br />
+      Que vous souhaitez acheter ou vendre votre bien immobilier : vous êtes au bon endroit !<br /><br />
+      L'immobilier, ce n'est pas uniquement des surfaces en m2 et des prix net vendeur,<br />
+      c'est surtout vous : des gens uniques et des projets de vie qui le sont aussi.<br />
       Bref, autant de nouveaux défis à relever ensemble, une bonne dose de créativité et une aventure humaine passionnante !
     </Typography>
-      
-      </Container>
-    <Container maxWidth='xl' className={classes.centerItem}>
-      {properties.map((item) => (
-        <Grid item md={8} key={item.id} >
-          <Paper className={classes.paper}>
-            <Link
-              className={classes.link}
-              to={"/properties/" + item.id}
-              key={item.id}>
-              <Card >
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    alt="interior house"
-                    height="250"
-                    image="https://source.unsplash.com/640x427/?house"
-                    title="house"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {item.name}
-                    </Typography>
 
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Link>
-          </Paper>
-        </Grid>
-      ))}
-    </Container>
-    
-  </>
+      </Container>
+
+      <Container maxWidth='xl' className={classes.centerItem}>
+        {properties.map((item) => (
+          <Grid item md={8} key={item.id} >
+            <Paper className={classes.paper}>
+              <Link
+                className={classes.link}
+                to={"/properties/" + item.id}
+                key={item.id}>
+                <Card >
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      alt="interior house"
+                      height="250"
+                      image="https://source.unsplash.com/640x427/?house"
+                      title="house"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {item.name}
+                      </Typography>
+
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Link>
+            </Paper>
+          </Grid>
+        ))}
+      </Container>
+
+    </>
+
   );
 }
 
