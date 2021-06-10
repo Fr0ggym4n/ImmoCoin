@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './app.css'
 import { Provider } from 'react-redux'
 import Home from 'pages/Home';
 import Navbar from 'components/Navbar';
