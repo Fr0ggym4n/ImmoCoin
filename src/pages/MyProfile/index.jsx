@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { authenticate } from 'store/actions'
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
+import CardMedia from "@material-ui/core/CardMedia";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -130,6 +131,13 @@ const MyProfile = ({ properties }) => {
                 <h2>My Properties</h2>
                     {propertiesUser && propertiesUser.map((property) => (
                 <div className={classes.cardProperty}>
+                    <CardMedia
+                        component="img"
+                        alt="interior house"
+                        height="250"
+                        image="https://source.unsplash.com/640x427/?house"
+                        title="house"
+                    />
                     <h2 className={classes.cardItem}>{property.name}</h2>
                     <p className={classes.cardItem}>{property.description}</p>
                     <p className={classes.cardItem}>{property.price} $</p>
