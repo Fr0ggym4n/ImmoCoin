@@ -6,7 +6,9 @@ import Navbar from 'components/Navbar';
 import SignIn from 'pages/SignIn'
 import SignUp from 'pages/SignUp'
 import MyProfile from 'pages/MyProfile'
+import AddProperty from 'pages/AddProperty'
 import PrivateRoute from 'components/PrivateRoute'
+import MyProperties from 'pages/MyProperties'
 import store from 'store'
 import {
   BrowserRouter as Router,
@@ -14,6 +16,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Property from 'components/Property';
+
 
 
 
@@ -52,6 +55,8 @@ const App = () => {
               <Property properties={properties} />
             </Route>
             <PrivateRoute path="/profile" component={MyProfile} />
+            <PrivateRoute path="/properties" component={AddProperty} />
+            <PrivateRoute path="/myProperties" component={MyProperties} />
           </Switch>
         </div>
       </Router>
