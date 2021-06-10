@@ -18,7 +18,7 @@ const Navbar = () => {
 
   }
   return (
-    <div class="topnav">
+    <div className="topnav">
       <Link to="/">Home</Link>
       {!currentUser.id &&
         <div>
