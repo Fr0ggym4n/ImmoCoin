@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
     left: "50%",
     transform: "translate(-50%, -50%)",
     position: 'absolute',
-    width: 400,
+    width: "80%",
+    height: "90%",
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -42,6 +43,22 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column"
+  },
+  formContainer: {
+    padding: "8%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  formGroup: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  label: {
+    fontSize:"2rem"
+  },
+  inputNumber: {
+    padding: "1rem",
+    fontSize:"1rem"
   }
 
 }));
@@ -115,19 +132,24 @@ const Property = ({ properties }) => {
   const classes = useStyles();
   const body = (
     <div className={classes.paper}>
-      <div>
+      <div className={classes.label}>
         <h3>Edit property</h3>
       </div>
-      <form>
-      <div className="form-group">
-          <label type="text" name="username">Name</label>
-          <input type="text" name="name" onChange={(e) => setName(e.target.value)}></input>
-          <label type="text" name="description">Description</label>          <br></br>
+      <form className={classes.formContainer}>
+        <div className={classes.formGroup}>
+          <label className={classes.label} type="text" name="username">Name</label>
+          <input type="text" className={classes.inputNumber} name="name" onChange={(e) => setName(e.target.value)}></input>
+        </div>
+        <div className={classes.formGroup}>
+          <label className={classes.label} type="text" name="description">Description</label>
+          <textarea rows='4' className={classes.inputNumber} type="text" name="description" onChange={(e) => setDescription(e.target.value)}></textarea>
+        </div>
+        <div className={classes.formGroup}>
+          <label  className={classes.label} type="text" name="username">Price</label>
+          <input type="number" name="username"  className={classes.inputNumber} onChange={(e) => setPrice(e.target.value)}></input>
+        </div>
+        <div className={classes.formGroup}>
 
-          <textarea cols="47" rows="10" type="text" name="description" onChange={(e) => setDescription(e.target.value)}></textarea>
-          <br></br>
-          <label type="text" name="username">Price</label>
-          <input type="text" name="username" onChange={(e) => setPrice(e.target.value)}></input>
           <button type="submit" onClick={fetchEditProperty}>Update</button>
         </div>
       </form>
