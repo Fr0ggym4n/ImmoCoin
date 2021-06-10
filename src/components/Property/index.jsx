@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Container from '@material-ui/core/Container';
 import { makeStyles } from "@material-ui/core/styles";
+import { useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
 const Property = ({ properties }) => {
   const { idProperty } = useParams();
   const [currentProperty, setCurrentProperty] = useState(null);
+  const currentUser = useSelector(state=>state.authReducer.id)
+
+
 
   
 
@@ -33,16 +37,23 @@ const Property = ({ properties }) => {
   const classes = useStyles();
 
    
-  return <div>
-    <Container maxWidth="sm" className={classes.container}>
-      {currentProperty && <div>
-        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="picture house"  width="100%"/>
-        <h2>{currentProperty.name}</h2>
-        <p>{currentProperty.description}</p>
-        <span>Price: { currentProperty.price} $</span>
-      </div>}
-      </Container>
-        </div>;
+  return (
+            <Container maxWidth="sm" className={classes.container}>
+              {currentProperty && 
+                <div>
+                  <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="picture house"  width="100%"/>
+                  <h2>{currentProperty.name}</h2>
+                  <p>{currentProperty.description}</p>
+                  <span>Price: { currentProperty.price} $</span>
+                </div>}
+              {currentUser &&
+              <div>
+                <button>Editer</button>
+                <button>Supprimer</button >
+              </div>
+              }  
+            </Container>
+          );
 };
 
 export default Property;
