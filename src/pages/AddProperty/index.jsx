@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       '& > *': {
         margin: theme.spacing(0),
       
-        width: '25ch',
+        width: '50ch',
       },
     },
     centerItem: {
@@ -83,9 +83,15 @@ console.log("dataProperty", dataProperty);
             </div>
                 <form className={classes.root} noValidate autoComplete="off">
                 <div>
-                    <TextField id="standard-basic" label="Name" onChange={(e) => setName(e.target.value)} />
-                    <TextField id="standard-basic" label="Description" onChange={(e) => setDescription(e.target.value)} />
-                    <TextField id="standard-basic" label="Price" onChange={(e) => setPrice(e.target.value)} />
+                    <label type="text" name="name">Name</label>
+                    <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
+                    
+                    <label type="text" name="description">Description</label>
+                    <input type="text" name="description" onChange={(e) => setDescription(e.target.value)}/>
+                    <label type="text" name="price">Price</label>
+                    <input type="text" name="price" onChange={(e) => setPrice(e.target.value)}/>
+                    
+                   
                     
                     <button type="submit" onClick={fetchAddProperty}>Publish</button>
                 </div>
