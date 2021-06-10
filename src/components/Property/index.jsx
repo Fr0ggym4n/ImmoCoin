@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
+
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
 const Property = ({ properties }) => {
   const { idProperty } = useParams();
   const [currentProperty, setCurrentProperty] = useState(null);
+
+
   const currentUser = useSelector((state) => state.authReducer);
+
 
   console.log(currentUser.email);
   useEffect(() => {
@@ -60,6 +65,7 @@ const Property = ({ properties }) => {
       </Container>
     </div>
   );
+
 };
 
 export default Property;
