@@ -63,9 +63,10 @@ const Home = ({ properties }) => {
     </Typography>
 
       </Container>
+
       <Container maxWidth='xl' className={classes.centerItem}>
-        {properties.map((item, index) => (
-          <Grid key={index} item md={8} key={item.id} >
+        {properties.map((item) => (
+          <Grid item md={8} key={item.id} >
             <Paper className={classes.paper}>
               <Link
                 className={classes.link}
@@ -77,7 +78,7 @@ const Home = ({ properties }) => {
                       component="img"
                       alt="interior house"
                       height="250"
-                      image="https://images.unsplash.com/photo-1616137466211-f939a420be84?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+                      image="https://source.unsplash.com/640x427/?house"
                       title="house"
                     />
                     <CardContent>
@@ -95,6 +96,7 @@ const Home = ({ properties }) => {
       </Container>
 
     </>
+
   );
 }
 

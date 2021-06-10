@@ -5,6 +5,43 @@ import Cookies from 'js-cookie'
 import config from 'config'
 import { useDispatch } from 'react-redux'
 import { authenticate } from 'store/actions'
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    formContainer: {
+        padding: "10%",
+    },
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+       
+        
+    },
+    cardProperty: {
+        border: "1px solid ",
+        margin: "2rem 5rem",
+        padding: "2rem",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        borderRadius: "3px",
+        backgroundColor: "#f2f2f2",
+        
+        
+    },
+    cardItem: {
+        margin: "1rem"
+    },
+    containerProperty: {
+        textAlign: "center",
+       
+    }
+  }));
 
 
 const MyProfile = ({ properties }) => {
@@ -66,18 +103,19 @@ const MyProfile = ({ properties }) => {
     useEffect(() => {
         fetchPropertiesCurrentUser()
     }, [])
-
+    const classes = useStyles();
     return (
         <div>
+            <Container maxWidth="md" className={classes.container} >
             <div>
-                <h2>{currentUser.email}</h2>
+                <h3>{currentUser.email}</h3>
             </div>
 
             <div>
+                <form className={classes.formContainer}>
                 <div>
                     <h3>Edit Profile</h3>
                 </div>
-                <form>
                     <div>
                         <label type="email" name="email">Email</label>
                         <input type="text" name="email" onChange={(e) => setEmail(e.target.value)}></input>
@@ -86,16 +124,15 @@ const MyProfile = ({ properties }) => {
                         <button type="submit" onClick={updateCurrentUser}>Update</button>
                     </div>
                 </form>
-            </div>
-            <div>My Properties
+                </div>
+                </Container>
+            <div className={classes.containerProperty}>
+                <h2>My Properties</h2>
                     {propertiesUser && propertiesUser.map((property) => (
-                <div >
-                   
-                        <div>{property.name}</div>
-                        <div>{property.description}</div>
-                        <div>{property.price}</div>
-                  
-                   
+                <div className={classes.cardProperty}>
+                    <h2 className={classes.cardItem}>{property.name}</h2>
+                    <p className={classes.cardItem}>{property.description}</p>
+                    <p className={classes.cardItem}>{property.price} $</p>
                 </div>
             ))}
             </div>

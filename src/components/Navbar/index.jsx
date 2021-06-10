@@ -39,10 +39,7 @@ const Navbar = () => {
             <Link to="/properties"> Add Property</Link>
           </div>
           <div >
-            <Link to="/myProperties"> My Properties</Link>
-          </div>
-          <div >
-            <button onClick={handleLogout}>Log out</button>
+            <Link onClick={handleLogout}>Log out</Link>
           </div>
         </div>
       }
